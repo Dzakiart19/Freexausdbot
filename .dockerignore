@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs & Runtime
+*.log
+bot.log
+app/logs/
+nohup.out
+
+# Database
+*.db-journal
+
+# Test temp
+final_verification.py
+BOT_RUNNING.md

@@ -1,0 +1,19 @@
+services:
+  - name: xauusd-bot
+    docker:
+      dockerfile: Dockerfile
+    env:
+      - key: TELEGRAM_BOT_TOKEN
+        value: $TELEGRAM_BOT_TOKEN
+      - key: AUTHORIZED_USER_IDS
+        value: $AUTHORIZED_USER_IDS
+      - key: EVALUATION_MODE
+        value: "true"
+    instances:
+      - name: main
+        auto_scaling:
+          min_instances: 1
+          max_instances: 1
+    resources:
+      cpu: 500m
+      memory: 512Mi
