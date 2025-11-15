@@ -16,7 +16,12 @@ RUN pip install --no-cache-dir \
     -r requirements.txt
 
 COPY . .
+
+# Create data and logs directories
 RUN mkdir -p app/data app/logs
+
+# Fix log paths in main.py for Docker environment
+RUN sed -i "s|/workspaces/Freexausdbot/app/logs|/app/logs|g" app/main.py || true
 
 EXPOSE 8080
 
